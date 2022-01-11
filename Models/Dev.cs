@@ -1,6 +1,6 @@
 ﻿namespace Models
 {
-    public class Dev
+    public class Dev: IPerso<Bug>, IPerso<Code>
     {
         
         public event DelegateSante? ESante;
@@ -12,10 +12,10 @@
         public int Pv { get => _Pv; set => _Pv = value; }
         
 
-        public void Attaque(Bug bug, int degats=1)
-        {
-            bug.Encaisse(degats);
-        }
+        //public void Attaque(Bug bug, int degats=1)
+        //{
+        //    bug.Encaisse(degats);
+        //}
 
         public void Encaisse(int degats)
         {

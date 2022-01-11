@@ -7,6 +7,7 @@ static class Program
 
     static void  Main(string[] args)
     {
+
         Console.WriteLine("Dev VS Bug!");
 
         //1 - Création des deux combattants
@@ -17,6 +18,24 @@ static class Program
         Dev JuniorDev = new Dev();
         JuniorDev.Pv = 10;
 
+        Jeux J = new Jeux();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Code Quantum = new();
+
         //1.1 Abonnement aux events
         NullRef.ESante += Perso_ESante;
         JuniorDev.ESante += Perso_ESante;
@@ -26,8 +45,9 @@ static class Program
         //2 - Combat jusqu'à la mort d'un des deux
         while (!BugIsDeath && !DevIsDeath)
         {
-            NullRef.Attaque(JuniorDev, 2);
-            JuniorDev.Attaque(NullRef, 4);
+            J.Combat(NullRef, JuniorDev, 2);
+            J.Combat(JuniorDev, NullRef, 4);
+            J.Combat(Quantum, JuniorDev, 56);
         }
 
         //3 - On vérifie qui a gagné
@@ -39,7 +59,7 @@ static class Program
     {
         if (sender != null)
         {
-            if (sender is Dev) BugIsDeath = true;
+            if (sender is Bug) BugIsDeath = true;
             else DevIsDeath = true;
         }
         
